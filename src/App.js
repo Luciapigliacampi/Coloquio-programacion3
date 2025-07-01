@@ -64,7 +64,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>¿Si o no?</h1>
+      <h1>¿SI O NO?</h1>
       <p className="description">Haz una pregunta que se responda con sí o no, y te daré la respuesta.</p>
 
       <QuestionInput
