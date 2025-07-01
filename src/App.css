@@ -1,38 +1,170 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   min-height: 100vh;
+  padding: 20px 0;
+}
+
+.App {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  margin: 50px auto;
+}
+
+h1 {
+  color: #007bff;
+  margin-bottom: 15px;
+  font-size: 2.5em;
+}
+
+.description {
+  color: #555;
+  margin-bottom: 30px;
+  font-size: 1.1em;
+}
+
+.question-input-container {
   display: flex;
   flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.question-input {
+  width: 100%;
+  padding: 15px 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1.1em;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.question-input:focus {
+  border-color: #007bff;
+}
+
+.submit-button {
+  background-color: #007bff;
   color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.submit-button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.submit-button:active {
+  transform: translateY(1px);
+}
+
+.submit-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #dc3545;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.loading-message {
+  color: #6c757d;
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 1em;
+}
+
+.answer-container {
+  margin-top: 30px;
+  padding: 25px;
+  border-radius: 10px;
+  background-color: #e9ecef;
+  border: 1px solid #dee2e6;
+}
+
+.answer-text {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.answer-yes {
+  color: #28a745;
+}
+
+.answer-no {
+  color: #dc3545;
+}
+
+.answer-maybe {
+  color: #ffc107;
+}
+
+.answer-gif {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+   .App {
+    padding: 20px;
+    margin: 10px 15px;       /* 🔹 margen arriba/abajo: 10px, laterales: 15px */
+    width: auto;             /* ✅ deja que el ancho se ajuste */
+    max-width: calc(100% - 30px); /* 🔹 deja espacio lateral sin desbordar */
+    box-sizing: border-box;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .description {
+    font-size: 1em;
+  }
+
+  .question-input, .submit-button {
+    font-size: 1em;
+    padding: 12px 15px;
+    width: 100%;
+  }
+
+  .answer-text {
+    font-size: 2em;
   }
 }
